@@ -4,7 +4,7 @@
 **Name:** Llywellyn Sana Thaoroijam  
 **University:** Chitkara University, Punjab  
 **Mentor:** Dr. Simarjit Kaur, Associate Professor  
-**Course:** CO-OP Project at Industry (Module-2)
+**Course:** CO-OP Project at Industry (Module-2)  
 **Current Status:** Submitted
 
 ---
