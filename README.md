@@ -11,35 +11,23 @@
 ## Repository Structure
 
 ```bash
-Autonomous-Driving-EV-Framework/
+ai-drive-2210991854/
 │
-├── dataset/
-│   └── BDD100K/
+├── CODE/
+│   ├── AI_DRIVE_FINAL.ipynb
+│   ├── PRERUN.ipynb
+│   ├── yolo26n.pt
+│   ├── yolov8n.pt
+│   ├── yolov8n_trained.pt
+│   ├── data/
+│   └── runs/
 │
-├── models/
-│   └── yolov8_model.pt
+├── PPT and REPORT/
+│   ├── 2210991854_PPT.pptx
+│   └── 2210991854_REPORT.docx
 │
-├── app/
-│   ├── app.py
-│   ├── templates/
-│   └── static/
-│
-├── detection/
-│   ├── object_detection.py
-│   ├── lane_detection.py
-│   └── path_planning.py
-│
-├── training/
-│   ├── train.py
-│   └── preprocessing.py
-│
-├── results/
-│   ├── confusion_matrix.png
-│   ├── loss_curves.png
-│   └── validation_predictions.png
-│
-├── report/
-│   └── COOP2_Project_Report_Llywellyn.docx
+├── IPR Submission Proof/
+│   └── Research Paper Submission.png
 │
 └── README.md
 ```
@@ -53,21 +41,21 @@ This project presents a deep learning-based autonomous driving framework designe
 The framework combines:
 
 - YOLOv8-based real-time object detection
-- Lane detection using Canny edge detection
-- Polynomial curve fitting for road tracking
-- Dynamic path planning
-- Flask-based real-time deployment interface
+- Lane detection and road analysis
+- Dynamic object tracking
+- Deep learning-based traffic environment understanding
+- Real-time deployment workflow using Jupyter Notebook environment
 
 ---
 
 ## Key Features
 
 - Real-Time Object Detection
-- Lane Detection Pipeline
-- Dynamic Path Planning
-- Explainable AI Integration
-- Web-Based Deployment
-- GPU Optimized (35–55 FPS)
+- YOLOv8 Deep Learning Integration
+- Traffic and Lane Analysis
+- Autonomous Driving Simulation Workflow
+- GPU Optimized Processing
+- Dataset Preprocessing Pipeline
 
 ---
 
@@ -76,34 +64,107 @@ The framework combines:
 - Python 3.x
 - YOLOv8 (Ultralytics)
 - PyTorch
-- TensorFlow
 - OpenCV
-- Flask
 - NumPy
+- Jupyter Notebook
 - CUDA / NVIDIA GPU Acceleration
 
 ---
 
 ## Virtual Environment Setup
 
-### Create and Activate Virtual Environment
+### Create Virtual Environment
 
 ```bash
-# Create virtual environment
 python -m venv venv
+```
 
-# Activate on Windows
+### Activate Virtual Environment
+
+#### Windows
+
+```bash
 venv\Scripts\activate
+```
 
-# Activate on macOS/Linux
+#### macOS/Linux
+
+```bash
 source venv/bin/activate
 ```
 
 ### Install Dependencies
 
 ```bash
-pip install ultralytics opencv-python flask torch torchvision numpy
+pip install ultralytics torch torchvision opencv-python numpy notebook matplotlib pandas
 ```
+
+---
+
+## Dataset Setup
+
+This project uses the BDD100K dataset.
+
+### Download Dataset
+
+Download the dataset from:
+
+http://bdd-data.berkeley.edu/
+
+---
+
+### Extract Dataset
+
+After downloading, extract the dataset files inside the `100k` folder.
+
+Example:
+
+```bash
+100k/
+├── train/
+├── val/
+└── test/
+```
+
+---
+
+### Add Images
+
+Place all dataset images inside the corresponding `images` subfolders.
+
+Examples:
+
+```bash
+train/images
+val/images
+test/images
+```
+
+---
+
+### Add Labels
+
+Download and place the label files inside the root dataset directories.
+
+Examples:
+
+```bash
+train/
+val/
+test/
+```
+
+---
+
+## PRERUN Command
+
+Before training the model, run the PRERUN notebook to convert the labels into YOLO format.
+
+```bash
+PRERUN.ipynb
+```
+
+Run all cells in the notebook before starting training.
 
 ---
 
@@ -113,8 +174,8 @@ pip install ultralytics opencv-python flask torch torchvision numpy
 - PyTorch 2.0+
 - CUDA 11.8+ (for GPU acceleration)
 - OpenCV 4.8+
-- Flask 2.3+
 - NumPy 1.24+
+- Jupyter Notebook
 
 ---
 
@@ -130,43 +191,45 @@ pip install ultralytics opencv-python flask torch torchvision numpy
 
 ---
 
-## Dataset
-
-The project uses a curated subset of the BDD100K dataset for training and validation under diverse driving conditions.
-
----
-
 ## How to Run
 
-### Install Dependencies
+### Open Project Folder
 
 ```bash
-pip install ultralytics opencv-python flask torch torchvision numpy
+cd CODE
 ```
 
-### Run the Flask Application
+### Launch Jupyter Notebook
 
 ```bash
-python app/app.py
+jupyter notebook
 ```
 
-### Train the Model
+### Run Dataset Conversion
+
+Open and run:
 
 ```bash
-python training/train.py
+PRERUN.ipynb
+```
+
+### Run Main Project
+
+Open and run:
+
+```bash
+AI_DRIVE_FINAL.ipynb
 ```
 
 ---
 
-## Performance Summary
+## Model Files
 
-| Metric | Result |
-|---|---|
-| Real-Time FPS | 35–55 FPS |
-| Detection Framework | YOLOv8 |
-| Lane Detection | Canny + Polynomial Fitting |
-| Deployment | Flask Web Application |
-| Hardware | NVIDIA GPU |
+The repository includes pretrained and trained YOLO model weights:
+
+- `yolo26n.pt`
+- `yolov8n.pt`
+- `yolov8n_trained.pt`
 
 ---
 
@@ -191,7 +254,10 @@ Special thanks to **Dr. Simarjit Kaur** for her guidance and support throughout 
 **Llywellyn Sana Thaoroijam**  
 Bachelor of Engineering — Computer Science and Engineering  
 Chitkara University, Punjab
+
 ---
 
-## Collaborator
+## Collaborator Access
+
 This repository has been shared with: **cse.ph4e@chitkara.edu.in**
+
